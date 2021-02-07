@@ -42,7 +42,6 @@ now = datetime.datetime.now()
 parser.add_option("--loginsel", dest="loginsel",help= "Choose the submit button selector")
 parser.add_option("--errorsel", dest="errorsel",help= "Choose the message selector")
 parser.add_option("--dropdown", dest="dropdown",help= "Choose the dropdown menu selector")
-parser.add_option("--phonenumber", dest="phonenumber",help= "Choose the phone number to text")
 parser.add_option("--state", dest="state",help= "Choose the state on the website")
 #parser.add_option("--passlist", dest="passlist",help="Enter the password list directory")
 parser.add_option("--website", dest="website",help="choose a website")
@@ -80,12 +79,11 @@ def wizard():
     error_selector = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Message selector: ')
     drop_down =  input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Drop Down Menus selector: ')
     state =  input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the State on the website: ')
-    phone_number = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Phone Number to text: ')
     #username = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username to brute-force: ')
     #pass_list = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter a directory to a password list: ')
-    brutes(login_btn_selector, error_selector, drop_down, state, phone_number, website)
+    brutes(login_btn_selector, error_selector, drop_down, state, website)
 
-def brutes(login_btn_selector, error_selector, drop_down, state, phone_number, website):
+def brutes(login_btn_selector, error_selector, drop_down, state, website):
     driver = webdriver.Chrome()
     optionss = webdriver.ChromeOptions()
     optionss.add_argument("--disable-popup-blocking")
@@ -119,7 +117,7 @@ def brutes(login_btn_selector, error_selector, drop_down, state, phone_number, w
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
-            apple_phone = "phone_number"
+            apple_phone = "4042192150"
             if not imessage.check_compatibility(apple_phone):
                 print ("Not an iPhone")
             guid = imessage.send(apple_phone, "The webpage has changed on your computer")
@@ -148,9 +146,8 @@ if options.loginsel == None:
     if options.errorsel == None:
         if options.website == None:
             if options.dropdown == None:
-                if options.phonenumber == None:
-                    if options.state == None:
-                        wizard()
+                if options.state == None:
+                    wizard()
 
 
 #username = options.username
@@ -160,7 +157,6 @@ login_btn_selector = options.loginsel
 error_selector = options.errorsel
 website = options.website
 drop_down = options.dropdown
-phone_number = options.phonenumber
 state = options.state
 #pass_list = options.passlist
 print (banner)
