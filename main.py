@@ -1,5 +1,4 @@
-# Coded by METACHAR
-# Looking to work with other hit me up on my email @metachar1@gmail.com <--
+# Coded by Overtimedev
 import sys
 import datetime
 import selenium
