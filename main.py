@@ -127,15 +127,15 @@ exit()
 
 
 banner = color.BOLD + color.RED +'''
-   ____ _______  __      __     _____ _____ _____ _   _ ______ 
-  / __ \__   __| \ \    / /\   / ____/ ____|_   _| \ | |  ____|
- | |  | | | |     \ \  / /  \ | |   | |      | | |  \| | |__   
- | |  | | | |      \ \/ / /\ \| |   | |      | | | . ` |  __|  
- | |__| | | |       \  / ____ \ |___| |____ _| |_| |\  | |____ 
-  \____/  |_|        \/_/    \_\_____\_____|_____|_| \_|______|                                  
+   ____                 _   _                 __      __            _              _______          _ 
+  / __ \               | | (_)                \ \    / /           (_)            |__   __|        | |
+ | |  | |_   _____ _ __| |_ _ _ __ ___   ___   \ \  / /_ _  ___ ___ _ _ __   ___     | | ___   ___ | |
+ | |  | \ \ / / _ \ '__| __| | '_ ` _ \ / _ \   \ \/ / _` |/ __/ __| | '_ \ / _ \    | |/ _ \ / _ \| |
+ | |__| |\ V /  __/ |  | |_| | | | | | |  __/    \  / (_| | (_| (__| | | | |  __/    | | (_) | (_) | |
+  \____/  \_/ \___|_|   \__|_|_| |_| |_|\___|     \/ \__,_|\___\___|_|_| |_|\___|    |_|\___/ \___/|_|                                                                                                                                     
   {0}[{1}-{2}]--> {3}V.1.0
   {4}[{5}-{6}]--> {7}coded by 0vertime
-  {8}[{9}-{10}]-->{11}OT VACCINE TOOL                   '''.format(color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN)
+  {8}[{9}-{10}]-->{11}Overtime Vaccine Tool                  '''.format(color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN)
 
 driver = webdriver.Chrome()
 optionss = webdriver.ChromeOptions()
