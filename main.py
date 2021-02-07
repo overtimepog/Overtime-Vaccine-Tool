@@ -53,7 +53,7 @@ parser.add_option("--website", dest="website",help="choose a website")
 
 def wizard():
     print (banner)
-    website = raw_input(color.GREEN + color.BOLD + '\n[~] ' + color.CWHITE + 'Enter a website: ')
+    website = input(color.GREEN + color.BOLD + '\n[~] ' + color.CWHITE + 'Enter a website: ')
     sys.stdout.write(color.GREEN + '[!] '+color.CWHITE + 'Checking if site exists '),
     sys.stdout.flush()
     t.sleep(1)
@@ -74,15 +74,15 @@ def wizard():
         print (color.RED + '[!]'+color.CWHITE+ ' Website could not be located make sure to use http / https')
         exit()
 
-    #username_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Username selector: ')
-    #password_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Password selector: ')
-    login_btn_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Login button selector: ')
-    error_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Error message selector: ')
-    drop_down =  raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Drop Down Menus ID: ')
-    state =  raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the State on the website: ')
-    phone_number = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Phone Number to text: ')
-    #username = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username to brute-force: ')
-    #pass_list = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter a directory to a password list: ')
+    #username_selector = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Username selector: ')
+    #password_selector = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Password selector: ')
+    login_btn_selector = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Login button selector: ')
+    error_selector = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Error message selector: ')
+    drop_down =  input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Drop Down Menus ID: ')
+    state =  input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the State on the website: ')
+    phone_number = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Phone Number to text: ')
+    #username = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username to brute-force: ')
+    #pass_list = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter a directory to a password list: ')
     brutes(login_btn_selector, error_selector, drop_down, website)
 
 def brutes(login_btn_selector, error_selector, drop_down, website):
