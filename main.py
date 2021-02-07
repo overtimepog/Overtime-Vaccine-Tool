@@ -86,7 +86,7 @@ def wizard():
     brutes(login_btn_selector, error_selector, drop_down, website)
 
 def brutes(login_btn_selector, error_selector, drop_down, website):
-    f = open(pass_list, 'r')
+    f = open('r')
     driver = webdriver.Chrome()
     optionss = webdriver.ChromeOptions()
     optionss.add_argument("--disable-popup-blocking")
