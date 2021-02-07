@@ -121,21 +121,21 @@ def brutes(login_btn_selector, error_selector, drop_down, website):
                 phone = phone_number
 if not imessage.check_compatibility(phone):
     print ("Not an iPhone")
-guid = imessage.send(phone, "The CVS webpage has changed on your computer")
+guid = imessage.send(phone, "The webpage has changed on your computer")
 exit()
 
 
 
 banner = color.BOLD + color.RED +'''
-   _______      _______  __      __     _____ _____ _____ _   _ ______   _______ ____   ____  _      
-  / ____\ \    / / ____| \ \    / /\   / ____/ ____|_   _| \ | |  ____| |__   __/ __ \ / __ \| |     
- | |     \ \  / / (___    \ \  / /  \ | |   | |      | | |  \| | |__       | | | |  | | |  | | |     
- | |      \ \/ / \___ \    \ \/ / /\ \| |   | |      | | | . ` |  __|      | | | |  | | |  | | |     
- | |____   \  /  ____) |    \  / ____ \ |___| |____ _| |_| |\  | |____     | | | |__| | |__| | |____ 
-  \_____|   \/  |_____/      \/_/    \_\_____\_____|_____|_| \_|______|    |_|  \____/ \____/|______|
+   ____ _______  __      __     _____ _____ _____ _   _ ______ 
+  / __ \__   __| \ \    / /\   / ____/ ____|_   _| \ | |  ____|
+ | |  | | | |     \ \  / /  \ | |   | |      | | |  \| | |__   
+ | |  | | | |      \ \/ / /\ \| |   | |      | | | . ` |  __|  
+ | |__| | | |       \  / ____ \ |___| |____ _| |_| |\  | |____ 
+  \____/  |_|        \/_/    \_\_____\_____|_____|_| \_|______|                                  
   {0}[{1}-{2}]--> {3}V.1.0
   {4}[{5}-{6}]--> {7}coded by 0vertime
-  {8}[{9}-{10}]-->{11}CVS VACCINE TOOL                   '''.format(color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN)
+  {8}[{9}-{10}]-->{11}OT VACCINE TOOL                   '''.format(color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN,color.RED, color.CWHITE,color.RED,color.GREEN)
 
 driver = webdriver.Chrome()
 optionss = webdriver.ChromeOptions()
