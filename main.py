@@ -5,8 +5,9 @@ import datetime
 import selenium
 import requests
 import time as t
+from py_imessage import *
 from py_imessage import imessage
-import sleep
+from time import sleep
 from sys import stdout
 from selenium import *
 from selenium import webdriver
