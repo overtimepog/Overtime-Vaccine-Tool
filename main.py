@@ -107,7 +107,7 @@ def brutes(login_btn_selector, error_selector, drop_down, state, phone_number, w
             #select by select_by_visible_text() method
             sel.select_by_visible_text(state)
             t.sleep(0.8)
-            Sel_pas.send_keys(line)
+            enter.click()
             t.sleep(1)
             error = browser.find_element_by_css_selector(error_selector) #Finds Selector
             print ('------------------------')
