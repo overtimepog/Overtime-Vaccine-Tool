@@ -86,7 +86,6 @@ def wizard():
     brutes(login_btn_selector, error_selector, drop_down, website)
 
 def brutes(login_btn_selector, error_selector, drop_down, website):
-    f = open('r')
     driver = webdriver.Chrome()
     optionss = webdriver.ChromeOptions()
     optionss.add_argument("--disable-popup-blocking")
@@ -95,28 +94,27 @@ def brutes(login_btn_selector, error_selector, drop_down, website):
     browser = webdriver.Chrome(chrome_options=optionss)
     while True:
         try:
-            for line in f:
-                browser.get(website)
-                t.sleep(2)
-                #Sel_user = browser.find_element_by_css_selector(username_selector) #Finds Selector
-                #Sel_pas = browser.find_element_by_css_selector(password_selector) #Finds Selector
-                enter = browser.find_element_by_css_selector(login_btn_selector) #Finds Selector
-                # browser.find_element_by_css_selector(password_selector).clear()
-                # browser.find_element_by_css_selector(username_selector).clear()
-                #Sel_user.send_keys(username)
-                sel = Select(browser.find_element_by_css_selector(drop_down))
-                t.sleep(0.8)
-                #select by select_by_visible_text() method
-                sel.select_by_visible_text(state)
-                t.sleep(0.8)
-                Sel_pas.send_keys(line)
-                t.sleep(1)
-                error = browser.find_element_by_css_selector(error_selector) #Finds Selector
-                print ('------------------------')
-                print (color.GREEN + 'Not Available yet')
-                print ('------------------------')
-                #t.sleep(1)
-                #browser.get(website)
+            browser.get(website)
+            t.sleep(2)
+            #Sel_user = browser.find_element_by_css_selector(username_selector) #Finds Selector
+            #Sel_pas = browser.find_element_by_css_selector(password_selector) #Finds Selector
+            enter = browser.find_element_by_css_selector(login_btn_selector) #Finds Selector
+            # browser.find_element_by_css_selector(password_selector).clear()
+            # browser.find_element_by_css_selector(username_selector).clear()
+            #Sel_user.send_keys(username)
+            sel = Select(browser.find_element_by_css_selector(drop_down))
+            t.sleep(0.8)
+            #select by select_by_visible_text() method
+            sel.select_by_visible_text(state)
+            t.sleep(0.8)
+            Sel_pas.send_keys(line)
+            t.sleep(1)
+            error = browser.find_element_by_css_selector(error_selector) #Finds Selector
+            print ('------------------------')
+            print (color.GREEN + 'Not Available yet')
+            print ('------------------------')
+            #t.sleep(1)
+            #browser.get(website)
 
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
