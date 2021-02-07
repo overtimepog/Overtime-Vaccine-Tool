@@ -14,6 +14,7 @@ from optparse import OptionParser
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+from twilio.rest import TwilioRestClient
 
 #Graphics
 class color:
@@ -119,8 +120,13 @@ def brutes(login_btn_selector, error_selector, drop_down, state, phone_number, w
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
-            osascript sendMessage.applescript phone_number "The Webpage has Changed"
-            exit()
+            client = TwilioRestClient('AC36b41ebcdc444d74fadd5afe55a1aeed', '76517273ac0a79eb318cc27cf92f51ac')
+            client.messages.create(from_='+14157790221',
+                                    to='+14042192150',
+                                    body='your webpage has changed')
+
+
+    exit()
 
 
 
