@@ -117,12 +117,11 @@ def brutes(login_btn_selector, error_selector, drop_down, website):
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
-            phone = phone_number
-            if not imessage.check_compatibility(phone):
-            print("Not an iPhone")
-
-            guid = imessage.send(phone, "The CVS webpage has changed on your computer")
-            exit()
+                phone = phone_number
+if not imessage.check_compatibility(phone):
+    print ("Not an iPhone")
+guid = imessage.send(phone, "The CVS webpage has changed on your computer")
+exit()
 
 
 
@@ -162,5 +161,5 @@ drop_down = options.dropdown
 phone_number = options.phonenumber
 state = options.state
 #pass_list = options.passlist
-print banner
+print (banner)
 brutes(login_btn_selector, error_selector, drop_down, website)
