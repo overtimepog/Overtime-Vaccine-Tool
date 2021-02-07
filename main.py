@@ -83,9 +83,9 @@ def wizard():
     phone_number = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the Phone Number to text: ')
     #username = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter the username to brute-force: ')
     #pass_list = input(color.GREEN + '[~] ' + color.CWHITE + 'Enter a directory to a password list: ')
-    brutes(login_btn_selector, error_selector, drop_down, website)
+    brutes(login_btn_selector, error_selector, drop_down, state, phone_number, website)
 
-def brutes(login_btn_selector, error_selector, drop_down, website):
+def brutes(login_btn_selector, error_selector, drop_down, state, phone_number, website):
     driver = webdriver.Chrome()
     optionss = webdriver.ChromeOptions()
     optionss.add_argument("--disable-popup-blocking")
