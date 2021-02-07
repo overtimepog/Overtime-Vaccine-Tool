@@ -105,15 +105,19 @@ def brutes(login_btn_selector, error_selector, drop_down, website):
                 # browser.find_element_by_css_selector(username_selector).clear()
                 #Sel_user.send_keys(username)
                 sel = Select(driver.find_element_by_id(drop_down))
-                time.sleep(0.8)
+                t.sleep(0.8)
                 #select by select_by_visible_text() method
                 sel.select_by_visible_text(state)
+                t.sleep(0.8)
                 Sel_pas.send_keys(line)
                 t.sleep(1)
                 error = browser.find_element_by_css_selector(error_selector) #Finds Selector
                 print ('------------------------')
                 print (color.GREEN + 'Not Available yet')
                 print ('------------------------')
+                #t.sleep(1)
+                #browser.get(website)
+
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
