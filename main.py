@@ -118,11 +118,23 @@ def brutes(login_btn_selector, error_selector, drop_down, state, phone_number, w
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
-            account = "AC36b41ebcdc444d74fadd5afe55a1aeed"
-            token = "76517273ac0a79eb318cc27cf92f51ac"
-            client = Client(account, token)
-            message = client.messages.create(to=phone_number, from_="+14157790221",
-                             body="The Webpage has Changed")
+            import os
+            from twilio.rest import Client
+
+
+            # Your Account Sid and Auth Token from twilio.com/console
+            # and set the environment variables. See http://twil.io/secure
+            account_sid = os.environ['AC36b41ebcdc444d74fadd5afe55a1aeed']
+            auth_token = os.environ['d5d140525ecce6d86c5cb85a29e4323f']
+            client = Client(account_sid, auth_token)
+
+            message = client.messages.create(
+                                        body='Your Webpage has Changed',
+                                        from_='+14157790221',
+                                        to='+14042192150'
+                          )
+
+print(message.sid)
             exit()
 
 
