@@ -4,8 +4,6 @@ import datetime
 import selenium
 import requests
 import time as t
-from py_imessage import *
-from py_imessage import imessage
 from time import sleep
 from sys import stdout
 from selenium import *
@@ -14,7 +12,7 @@ from optparse import OptionParser
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
-from twilio.rest import TwilioRestClient
+from twilio.rest import Client
 
 #Graphics
 class color:
@@ -120,13 +118,12 @@ def brutes(login_btn_selector, error_selector, drop_down, state, phone_number, w
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
-            client = TwilioRestClient('AC36b41ebcdc444d74fadd5afe55a1aeed', '76517273ac0a79eb318cc27cf92f51ac')
-            client.messages.create(from_='+14157790221',
-                                    to='+14042192150',
-                                    body='your webpage has changed')
-
-
-    exit()
+            account = "AC36b41ebcdc444d74fadd5afe55a1aeed"
+            token = "76517273ac0a79eb318cc27cf92f51ac"
+            client = Client(account, token)
+            message = client.messages.create(to=phone_number, from_="+14157790221",
+                             body="The Webpage has Changed")
+            exit()
 
 
 
