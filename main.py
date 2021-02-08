@@ -13,6 +13,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from twilio.rest import Client
+import os
 
 #Graphics
 class color:
@@ -118,10 +119,6 @@ def brutes(login_btn_selector, error_selector, drop_down, state, phone_number, w
         except KeyboardInterrupt: #returns to main menu if ctrl C is used
             exit()
         except selenium.common.exceptions.NoSuchElementException:
-            import os
-            from twilio.rest import Client
-
-
             # Your Account Sid and Auth Token from twilio.com/console
             # and set the environment variables. See http://twil.io/secure
             account_sid = os.environ['AC36b41ebcdc444d74fadd5afe55a1aeed']
